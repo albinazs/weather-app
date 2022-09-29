@@ -10,13 +10,31 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
     />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <form action="">
-      <input type="search" name="search" id="search" />
-      <button type="submit">
-        <span class="material-symbols-outlined"> search </span>
-      </button>
-    </form>
+    <header>
+      <h1>Weather app</h1>
+    </header>
+    <div class="main">
+      <form action="">
+        <input type="search" name="search" id="search" autofocus="autofocus" />
+      </form>
+      <div class="container">
+        <div class="weather-info">
+          <div class="city">London</div>
+          <div class="desc">Broken clouds</div>
+          <div class="curr-temp">
+            <div class="deg">14 C</div>
+            <img src="" alt="weather-icon" id="icon" />
+          </div>
+          <div class="add-info">
+            <div class="feels">Feels like 13 C</div>
+            <div class="wind">Wind: 2.6m/s</div>
+            <div class="humidity">Humidity: 63%</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
