@@ -78,17 +78,18 @@ input[type="search"] {
 }
 
 #weather-info {
-  display: flex;
+
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 200px;
   height: 400px;
-  width: 400px;
+  width: 350px;
   border-radius: 5px;
   padding: 2rem;
   background-color: white;
   opacity: 0.9;
+  display: none;
 }
 
 #city {
@@ -111,10 +112,14 @@ input[type="search"] {
   color: black;
 }
 
+#add-info {
+  text-align: center;
+}
+
 #wind {
   margin: 10px;
 }
 
 .visible {
-  display: block !important;
+  display: flex !important;
 }
