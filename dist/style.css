@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+
+:root {
+  --orange: #ec6e4c;
+  --light-grey: #f2f2f1;
+  --dark-grey: #48484a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+  font-size: 24px;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: var(--dark-grey);
+  color: var(--light-grey);
+  z-index: 1;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(./img/sky_bg.jpg);
+  background-size: cover;
+  filter: grayscale(100%);
+}
+
+input[type="search"] {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 1rem;
+  opacity: 0.4;
+  cursor: focus;
+}
+
+.container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--dark-grey);
+}
+
+.weather-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 200px;
+  height: 400px;
+  width: 400px;
+  border-radius: 5px;
+  padding: 2rem;
+  background-color: white;
+  opacity: 0.9;
+}
+
+.city {
+  font-size: 1.7rem;
+  color: var(--orange);
+}
+
+.curr-temp {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+}
+
+.deg {
+  font-size: 2rem;
+  color: black;
+}
+
+.wind {
+  margin: 10px;
+}

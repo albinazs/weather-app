@@ -1,12 +1,16 @@
-import "./css/style.css";
+
 
 const search = document.querySelector("input[type=search]");
 const form = document.querySelector("form");
+const main = document.querySelector(".main");
+const icon = document.querySelector("#icon");
 const API_KEY = "54548de06c18d589b6cb4816609e68c3";
 
 form.addEventListener("submit", (e) => getCoordinates(e));
 
 async function getCoordinates(e) {
+  console.log(search.value);
+  if (search.value == "") return;
   e.preventDefault();
   const searchRequest = search.value;
   const request = `http://api.openweathermap.org/geo/1.0/direct?q=${searchRequest}&limit=5&appid=${API_KEY}`;
@@ -33,7 +37,17 @@ async function getWeather(lat, lon) {
 
   const temp = result.main.temp;
   console.log(temp);
+
+  getIcon(weatherMain);
 }
 
-// if chosen F - F
-// show 
+async function getIcon(weatherMain) {
+  switch (weatherMain) {
+    case "Clouds":
+      icon.src = "https://openweathermap.org/img/wn/11d@2x.png";
+      break;
+  }
+}
+
+// if submitted - clear form, show city and weather
+//clean data
