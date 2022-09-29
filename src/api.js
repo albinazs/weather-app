@@ -8,7 +8,9 @@ export async function getLocation(e) {
   e.preventDefault();
   const searchRequest = search.value;
   const request = `http://api.openweathermap.org/geo/1.0/direct?q=${searchRequest}&limit=5&appid=${API_KEY}`;
-  const response = await fetch(request);
+  const response = await fetch(request, {
+    mode: "cors",
+  });
   const result = await response.json();
 
   const lat = result[0].lat;
@@ -20,7 +22,9 @@ export async function getLocation(e) {
 
 async function getWeather(lat, lon) {
   const request = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
-  const response = await fetch(request);
+  const response = await fetch(request, {
+    mode: "cors",
+  });
   const weatherData = await response.json();
 
   renderWeather(weatherData);
