@@ -39,14 +39,14 @@ h1 {
   font-size: 1.5rem;
 }
 
-.main {
+#main {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.main::before {
+#main::before {
   content: "";
   position: absolute;
   top: 0;
@@ -69,7 +69,7 @@ input[type="search"] {
   cursor: focus;
 }
 
-.container {
+#container {
   flex: 1;
   display: flex;
   justify-content: center;
@@ -77,7 +77,7 @@ input[type="search"] {
   color: var(--dark-grey);
 }
 
-.weather-info {
+#weather-info {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -91,22 +91,30 @@ input[type="search"] {
   opacity: 0.9;
 }
 
-.city {
+#city {
   font-size: 1.7rem;
   color: var(--orange);
 }
 
-.curr-temp {
+#curr-temp {
   display: flex;
   align-items: center;
   margin: 20px;
 }
 
-.deg {
+#icon {
+  display: none;
+}
+
+#deg {
   font-size: 2rem;
   color: black;
 }
 
-.wind {
+#wind {
   margin: 10px;
+}
+
+.visible {
+  display: block !important;
 }
