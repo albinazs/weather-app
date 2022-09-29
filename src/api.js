@@ -13,7 +13,6 @@ export async function getLocation(e) {
 
   const lat = result[0].lat;
   const lon = result[0].lon;
-
   getWeather(lat, lon);
 
   search.value = "";
@@ -23,7 +22,6 @@ async function getWeather(lat, lon) {
   const request = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
   const response = await fetch(request);
   const weatherData = await response.json();
-  console.log(weatherData);
 
   renderWeather(weatherData);
 }

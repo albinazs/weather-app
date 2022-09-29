@@ -3,7 +3,6 @@ import { Data } from "./data";
 const weatherDiv = document.querySelector("#weather-info");
 const cityDiv = document.querySelector("#city");
 const descriptionDiv = document.querySelector("#desc");
-const currentTempDiv = document.querySelector("#curr-temp");
 const degreeDiv = document.querySelector("#deg");
 const icon = document.querySelector("#icon");
 const feelsDiv = document.querySelector("#feels");
@@ -11,37 +10,34 @@ const windDiv = document.querySelector("#wind");
 const humidityDiv = document.querySelector("#hum");
 
 export const renderWeather = (weatherData) => {
-  //hide onload 
+
+  weatherDiv.classList.add('visible');
 
   const city = weatherData.name;
-  console.log(city);
+  cityDiv.textContent = city;
 
   const rawDescription = weatherData.weather[0].description;
   const finalDescription = Data.capitalise(rawDescription);
-  console.log(finalDescription)
+  descriptionDiv.textContent = finalDescription;
 
-  const temp = weatherData.main.temp;
-  const finalTemp = Data.getTemp(temp);
-  console.log(finalTemp);
+  const rawTempData = weatherData.main.temp;
+  const finalTempData = Data.getTemp(rawTempData);
+  degreeDiv.textContent = finalTempData;
 
   const iconID = weatherData.weather[0].icon;
-
+  renderIcon(iconID);
 
   const rawFeelsLikeData = weatherData.main.feels_like;
   const finalFeelsLikeData = Data.getFeels(rawFeelsLikeData);
-  console.log(finalFeelsLikeData);
+  feelsDiv.textContent = finalFeelsLikeData;
 
   const rawWindData = weatherData.wind.speed;
   const finalWindData = Data.getWind(rawWindData);
-  console.log(finalWindData);
+  windDiv.textContent = finalWindData;
 
   const rawHumidityData = weatherData.main.humidity;
   const finalHumidityData = Data.getHumidity(rawHumidityData);
-  console.log(finalHumidityData);
-
-  
-
-  renderIcon(iconID);
+  humidityDiv.textContent = finalHumidityData;
 };
 
 const renderIcon = (iconID) => {
