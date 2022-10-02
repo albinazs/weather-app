@@ -8,7 +8,7 @@ export async function getLocation(e) {
   e.preventDefault();
   try {
     const searchRequest = search.value;
-    const request = `http://api.openweathermap.org/geo/1.0/direct?q=${searchRequest}&limit=5&appid=${API_KEY}`;
+    const request = `https://api.openweathermap.org/geo/1.0/direct?q=${searchRequest}&limit=5&appid=${API_KEY}`;
     const response = await fetch(request, {
       mode: "cors",
     });
