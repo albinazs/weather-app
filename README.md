@@ -1,6 +1,6 @@
 Weather App
 
-Weather app created using HTML, CSS, Javascript, ESLint, Prettier and webpack. Check out live preview here:
+Weather app created using HTML, CSS, Javascript, ESLint, Prettier and webpack. Check out live preview here: https://albinazs.github.io/weather-app/
 
 Functionality:
 
